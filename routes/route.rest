@@ -1,0 +1,30 @@
+# get all tasks
+GET https://fair-gray-gharial-ring.cyclic.app/api/tasks
+
+###
+
+POST https://fair-gray-gharial-ring.cyclic.app/api/tasks
+Content-Type: application/json
+
+{
+    "task": "Buy milk"
+}
+
+###
+
+# get one task by id 
+GET http://localhost:3000/api/tasks/64103f4b21e3710955ea9594
+
+###
+#delete task
+DELETE http://localhost:3000/api/tasks/64103f4b21e3710955ea9594
+
+
+###
+# Updating a task
+PATCH http://localhost:3000/api/tasks/6410430c9e2b352d0a292b51
+Content-Type: application/json
+
+{
+    "task": "Buy eggs"
+}
