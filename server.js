@@ -16,6 +16,7 @@ const corsOptions = {
 	origin: [
 		"http://localhost:3000",
 		"https://to-do-list-eilvymvmg-ziwei531.vercel.app/",
+		"https://to-do-list-4zkf1gf18-ziwei531.vercel.app/",
 	],
 };
 
