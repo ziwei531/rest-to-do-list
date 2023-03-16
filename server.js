@@ -25,6 +25,22 @@ dotenv.config();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+app.use(function (req, res, next) {
+	const allowedOrigins = [
+		"http://localhost:3000",
+		"https://to-do-list-eilvymvmg-ziwei531.vercel.app/",
+		"https://to-do-list-4zkf1gf18-ziwei531.vercel.app/",
+	];
+	let origin = req.headers.origin;
+	if (allowedOrigins.indexOf(origin) > -1) {
+		res.setHeader("Access-Control-Allow-Origin", origin);
+	}
+	res.header("Access-Control-Allow-Methods", "GET, OPTIONS");
+	res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+	res.header("Access-Control-Allow-Credentials", true);
+	return next();
+});
+
 // app.use(express.static(path.join(__dirname, "../public")));
 
 const connectToDB = async () => {
